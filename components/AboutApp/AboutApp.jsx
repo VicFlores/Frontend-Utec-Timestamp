@@ -1,0 +1,137 @@
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import Footer from '../Footer/Footer';
+import {
+  AboutAppButton,
+  AboutAppButtonContainer,
+  AboutAppContainer,
+  AboutAppMainContainer,
+  AboutAppMainImage,
+  AboutAppMainImageContainer,
+  AboutAppSubTitle,
+  AboutAppTechnologies,
+  AboutAppTechnologiesContainer,
+  AboutAppTechnologiesImage,
+  AboutAppTechnologiesImageContainer,
+  AboutAppTitle,
+  AboutAppTitleTechnologies,
+  AboutAppMain,
+} from './styles';
+
+const AboutApp = () => {
+  return (
+    <AboutAppMain>
+      <AboutAppContainer>
+        <AboutAppTitle theme={{ color: 'white' }}>
+          Working with the latest technology
+        </AboutAppTitle>
+        <AboutAppSubTitle theme={{ color: 'white', textAlign: 'center' }}>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout.
+        </AboutAppSubTitle>
+
+        <AboutAppButtonContainer>
+          <AboutAppButton>Get Started</AboutAppButton>
+          <AboutAppButton>About Me</AboutAppButton>
+          <AboutAppButton>Login</AboutAppButton>
+        </AboutAppButtonContainer>
+      </AboutAppContainer>
+
+      <AboutAppMainContainer>
+        <AboutAppTitle theme={{ color: 'black' }}>
+          What's new about utec timestamp?
+        </AboutAppTitle>
+        <AboutAppSubTitle
+          theme={{
+            color: 'black',
+            textAlign: 'justify',
+            marginSubTitle: '0 20px',
+          }}>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal It is a long
+          established. It is a long established fact that a reader will be
+          distracted by the readable content of a page when looking at its
+          layout.
+        </AboutAppSubTitle>
+
+        <AboutAppMainImageContainer>
+          <AboutAppMainImage src='https://res.cloudinary.com/vicflores11/image/upload/v1660777819/frontend-utec-timestamp/home-font_tprxko.png' />
+        </AboutAppMainImageContainer>
+      </AboutAppMainContainer>
+
+      <AboutAppTechnologiesContainer>
+        <AboutAppTitle>
+          The best technologies for your applications
+        </AboutAppTitle>
+
+        <ThemeProvider
+          theme={{ marginTitle: '0 25px', marginSubTitle: '0 20px' }}>
+          <AboutAppTechnologies>
+            <AboutAppTitleTechnologies>Typescript</AboutAppTitleTechnologies>
+            <AboutAppSubTitle>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal It
+              is a long established
+            </AboutAppSubTitle>
+
+            <AboutAppTechnologiesImageContainer
+              theme={{ height: 200, width: 200 }}>
+              <AboutAppTechnologiesImage src='https://res.cloudinary.com/vicflores11/image/upload/v1660957549/frontend-utec-timestamp/ts-removebg_dn0cle.png' />
+            </AboutAppTechnologiesImageContainer>
+          </AboutAppTechnologies>
+
+          <AboutAppTechnologies>
+            <AboutAppTitleTechnologies>NodeJs</AboutAppTitleTechnologies>
+            <AboutAppSubTitle>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal It
+              is a long established
+            </AboutAppSubTitle>
+
+            <AboutAppTechnologiesImageContainer
+              theme={{ height: 164, width: 215 }}>
+              <AboutAppTechnologiesImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661018424/frontend-utec-timestamp/NodeJs-removebg-preview_rcnben.png' />
+            </AboutAppTechnologiesImageContainer>
+          </AboutAppTechnologies>
+
+          <AboutAppTechnologies>
+            <AboutAppTitleTechnologies>NextJs</AboutAppTitleTechnologies>
+            <AboutAppSubTitle>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal It
+              is a long established
+            </AboutAppSubTitle>
+
+            <AboutAppTechnologiesImageContainer
+              theme={{ height: 164, width: 215 }}>
+              <AboutAppTechnologiesImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661020296/frontend-utec-timestamp/undraw_next_js_-8-g5m_xwmghc.svg' />
+            </AboutAppTechnologiesImageContainer>
+          </AboutAppTechnologies>
+
+          <AboutAppTechnologies>
+            <AboutAppTitleTechnologies>TensorFlow</AboutAppTitleTechnologies>
+            <AboutAppSubTitle>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal It
+              is a long established
+            </AboutAppSubTitle>
+
+            <AboutAppTechnologiesImageContainer
+              theme={{ height: 159, width: 258 }}>
+              <AboutAppTechnologiesImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661020852/frontend-utec-timestamp/Dise%C3%B1o_sin_t%C3%ADtulo-removebg-preview_vkrgvq.png' />
+            </AboutAppTechnologiesImageContainer>
+          </AboutAppTechnologies>
+        </ThemeProvider>
+      </AboutAppTechnologiesContainer>
+
+      <Footer margin='90' />
+    </AboutAppMain>
+  );
+};
+
+export default AboutApp;
