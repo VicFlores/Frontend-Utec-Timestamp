@@ -16,18 +16,30 @@ import {
   AboutAppTitle,
   AboutAppTitleTechnologies,
   AboutAppMain,
+  AboutAppMainSubTitleImage,
+  AboutAppTechnologiesInfo,
 } from './styles';
 
 const AboutApp = () => {
   return (
     <AboutAppMain>
       <AboutAppContainer>
-        <AboutAppTitle theme={{ color: 'white' }}>
+        <AboutAppTitle theme={{ color: 'white', textAlign_xl: 'center' }}>
           Working with the latest technology
         </AboutAppTitle>
-        <AboutAppSubTitle theme={{ color: 'white', textAlign: 'center' }}>
+        <AboutAppSubTitle
+          theme={{
+            color: 'white',
+            textAlign: 'center',
+            margin_subtitle_xsm: 20,
+            margin_subtitle_xl: 90,
+          }}>
           It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
+          readable content of a page when looking at its layout. It is a long
+          established fact that a reader will be distracted by the readable
+          content of a page when looking at its layout. It is a long established
+          fact that a reader will be distracted by the readable content of a
+          page when looking at its layout.
         </AboutAppSubTitle>
 
         <AboutAppButtonContainer>
@@ -41,40 +53,49 @@ const AboutApp = () => {
         <AboutAppTitle theme={{ color: 'black' }}>
           What's new about utec timestamp?
         </AboutAppTitle>
-        <AboutAppSubTitle
-          theme={{
-            color: 'black',
-            textAlign: 'justify',
-            marginSubTitle: '0 20px',
-          }}>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal It is a long
-          established. It is a long established fact that a reader will be
-          distracted by the readable content of a page when looking at its
-          layout.
-        </AboutAppSubTitle>
 
-        <AboutAppMainImageContainer>
-          <AboutAppMainImage src='https://res.cloudinary.com/vicflores11/image/upload/v1660777819/frontend-utec-timestamp/home-font_tprxko.png' />
-        </AboutAppMainImageContainer>
+        <AboutAppMainSubTitleImage>
+          <AboutAppSubTitle
+            theme={{
+              color: 'black',
+              textAlign: 'justify',
+              margin_subtitle_xsm: 20,
+            }}>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal It is a
+            long established. It is a long established fact that a reader will
+            be distracted by the readable content of a page when looking at its
+            layout.
+          </AboutAppSubTitle>
+
+          <AboutAppMainImageContainer>
+            <AboutAppMainImage src='https://res.cloudinary.com/vicflores11/image/upload/v1660777819/frontend-utec-timestamp/home-font_tprxko.png' />
+          </AboutAppMainImageContainer>
+        </AboutAppMainSubTitleImage>
       </AboutAppMainContainer>
 
       <AboutAppTechnologiesContainer>
-        <AboutAppTitle>
+        <AboutAppTitle
+          theme={{
+            marginTitle_technologies_xl: 45,
+            marginTitle: '0 0 30px 0',
+          }}>
           The best technologies for your applications
         </AboutAppTitle>
 
         <ThemeProvider
-          theme={{ marginTitle: '0 25px', marginSubTitle: '0 20px' }}>
+          theme={{ marginTitle: '0 25px', margin_subtitle_xsm: 20 }}>
           <AboutAppTechnologies>
-            <AboutAppTitleTechnologies>Typescript</AboutAppTitleTechnologies>
-            <AboutAppSubTitle>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal It
-              is a long established
-            </AboutAppSubTitle>
+            <AboutAppTechnologiesInfo>
+              <AboutAppTitleTechnologies>Typescript</AboutAppTitleTechnologies>
+              <AboutAppSubTitle>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal It is a long established
+              </AboutAppSubTitle>
+            </AboutAppTechnologiesInfo>
 
             <AboutAppTechnologiesImageContainer
               theme={{ height: 200, width: 200 }}>
@@ -83,13 +104,15 @@ const AboutApp = () => {
           </AboutAppTechnologies>
 
           <AboutAppTechnologies>
-            <AboutAppTitleTechnologies>NodeJs</AboutAppTitleTechnologies>
-            <AboutAppSubTitle>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal It
-              is a long established
-            </AboutAppSubTitle>
+            <AboutAppTechnologiesInfo>
+              <AboutAppTitleTechnologies>NodeJs</AboutAppTitleTechnologies>
+              <AboutAppSubTitle>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal It is a long established
+              </AboutAppSubTitle>
+            </AboutAppTechnologiesInfo>
 
             <AboutAppTechnologiesImageContainer
               theme={{ height: 164, width: 215 }}>
@@ -98,13 +121,15 @@ const AboutApp = () => {
           </AboutAppTechnologies>
 
           <AboutAppTechnologies>
-            <AboutAppTitleTechnologies>NextJs</AboutAppTitleTechnologies>
-            <AboutAppSubTitle>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal It
-              is a long established
-            </AboutAppSubTitle>
+            <AboutAppTechnologiesInfo>
+              <AboutAppTitleTechnologies>NextJs</AboutAppTitleTechnologies>
+              <AboutAppSubTitle>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal It is a long established
+              </AboutAppSubTitle>
+            </AboutAppTechnologiesInfo>
 
             <AboutAppTechnologiesImageContainer
               theme={{ height: 164, width: 215 }}>
@@ -113,13 +138,15 @@ const AboutApp = () => {
           </AboutAppTechnologies>
 
           <AboutAppTechnologies>
-            <AboutAppTitleTechnologies>TensorFlow</AboutAppTitleTechnologies>
-            <AboutAppSubTitle>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal It
-              is a long established
-            </AboutAppSubTitle>
+            <AboutAppTechnologiesInfo>
+              <AboutAppTitleTechnologies>TensorFlow</AboutAppTitleTechnologies>
+              <AboutAppSubTitle>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal It is a long established
+              </AboutAppSubTitle>
+            </AboutAppTechnologiesInfo>
 
             <AboutAppTechnologiesImageContainer
               theme={{ height: 159, width: 258 }}>
