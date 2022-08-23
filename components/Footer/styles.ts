@@ -12,6 +12,10 @@ export const FooterContainer = styled.footer`
   height: auto;
   margin-top: ${(props) =>
     props.theme?.margin ? `${props.theme.margin}px` : '0'};
+
+  @media (min-width: 1200px) {
+    height: 150px;
+  }
 `;
 
 export const LinkRouter = styled.a`
@@ -27,6 +31,12 @@ export const LinkName = styled.p`
 export const FooterLinksContainer = styled.div`
   display: grid;
   grid-auto-rows: 60px;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 200px);
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const FooterLinks = styled.div`
