@@ -13,7 +13,7 @@ export const FooterContainer = styled.footer`
   margin-top: ${(props) =>
     props.theme?.margin ? `${props.theme.margin}px` : '0'};
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     height: 150px;
   }
 `;
@@ -32,7 +32,7 @@ export const FooterLinksContainer = styled.div`
   display: grid;
   grid-auto-rows: 60px;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     grid-template-columns: repeat(4, 200px);
     justify-content: center;
     align-items: center;
