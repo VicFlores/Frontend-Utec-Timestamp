@@ -29,7 +29,6 @@ export const LoginCardFormContainer = styled.div`
     grid-template-columns: 303px 1fr;
     align-items: center;
     justify-content: center;
-    gap: 70px;
   }
 `;
 

@@ -27,7 +27,7 @@ const Allowances = () => {
         <LoginContainer>
           <LoginCardFormContainer>
             <LoginCardImageContainer>
-              <LoginCardImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661552262/frontend-utec-timestamp/undraw_web_search_re_efla_xbw3x1.svg' />
+              <LoginCardImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661554465/frontend-utec-timestamp/undraw_people_search_re_5rre_pvrv6r.svg' />
             </LoginCardImageContainer>
             <LoginCardForm>
               <LoginCardFormTitle>
