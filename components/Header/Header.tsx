@@ -1,37 +1,48 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
 import {
-  AppName,
-  AppNameContainer,
+  BurgerMenu,
+  BurgerMenuContainer,
+  HeaderAppName,
   HeaderButton,
-  HeaderButtonContainer,
   HeaderContainer,
+  HeaderNavContainer,
   LinkRouter,
-  NavContainer,
 } from './styles';
 
 const Header = () => {
-  return (
-    <HeaderContainer>
-      <AppNameContainer>
-        <AppName>Utec Timestamp</AppName>
-      </AppNameContainer>
+  const [menu, setMenu] = useState<boolean>(false);
 
-      <NavContainer>
-        <Link href='/' passHref>
+  const handleMenu = () => {
+    setMenu(!menu);
+  };
+
+  return (
+    <HeaderContainer hidden={menu}>
+      <HeaderAppName>Utec Timestamp</HeaderAppName>
+
+      <BurgerMenuContainer>
+        <BurgerMenu onClick={handleMenu}>
+          <AiOutlineMenu />
+        </BurgerMenu>
+      </BurgerMenuContainer>
+
+      <HeaderNavContainer hidden={menu}>
+        <Link href='/dashboard' passHref>
           <LinkRouter>Home</LinkRouter>
         </Link>
-        <Link href='/' passHref>
+
+        <Link href='/permissions' passHref>
           <LinkRouter>Permissions</LinkRouter>
         </Link>
+
         <Link href='/' passHref>
           <LinkRouter>Teachers</LinkRouter>
         </Link>
-      </NavContainer>
+      </HeaderNavContainer>
 
-      <HeaderButtonContainer>
-        <HeaderButton>Logout</HeaderButton>
-      </HeaderButtonContainer>
+      <HeaderButton hidden={menu}>Logout</HeaderButton>
     </HeaderContainer>
   );
 };
