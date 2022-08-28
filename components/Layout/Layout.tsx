@@ -8,7 +8,7 @@ const Layout = ({ children, show }: TLayout) => {
     <>
       <Header />
       {children}
-      <Footer />
+      <Footer margin='90' />
     </>
   );
 };
