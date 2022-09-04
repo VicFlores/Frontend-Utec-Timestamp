@@ -5,6 +5,10 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  env: {
+    BASE_URL: 'https://backend-utec-timestamp.herokuapp.com',
+  },
+  
 }
 
 module.exports = nextConfig
