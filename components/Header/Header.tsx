@@ -1,5 +1,7 @@
+import axios from 'axios';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { AiOutlineMenu } from 'react-icons/ai';
 import {
   BurgerMenu,
@@ -12,10 +14,18 @@ import {
 } from './styles';
 
 const Header = () => {
+  const router = useRouter();
   const [menu, setMenu] = useState<boolean>(false);
 
   const handleMenu = () => {
     setMenu(!menu);
+  };
+
+  const logout = async () => {
+    await axios.post('/api/auth/logout');
+    router.push({
+      pathname: '/login',
+    });
   };
 
   return (
@@ -42,7 +52,9 @@ const Header = () => {
         </Link>
       </HeaderNavContainer>
 
-      <HeaderButton hidden={menu}>Logout</HeaderButton>
+      <HeaderButton onClick={() => logout()} hidden={menu}>
+        Logout
+      </HeaderButton>
     </HeaderContainer>
   );
 };
