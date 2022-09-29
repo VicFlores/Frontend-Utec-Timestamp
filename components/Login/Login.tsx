@@ -39,6 +39,7 @@ const Login = () => {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       await axios.post('/api/auth/login', data);
+        
 
       setErrorMessage({
         status: 200,
@@ -46,7 +47,7 @@ const Login = () => {
       });
 
       router.push({
-        pathname: '/dashboard',
+        pathname: '/private/dashboard',
       });
     } catch (error: any) {
       setErrorMessage(error.response.data);
