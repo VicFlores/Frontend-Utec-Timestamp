@@ -4,7 +4,6 @@ import fetchAdapter from '@vespaiach/axios-fetch-adapter';
 import axios from 'axios';
 
 export async function middleware(request: NextRequest) {
-  const { origin } = request.nextUrl;
   const token = request.cookies.get('MyTokenCookie');
 
   if (token === undefined) {
