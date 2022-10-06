@@ -1,22 +1,8 @@
-import axios from 'axios';
-
-export default async function verifyTokenHandler(req: any, res: any) {
+export default async function profileHandler(req: any, res: any) {
   try {
     const { MyTokenCookie } = req.cookies;
-
-    console.log('MyTokenCookie', MyTokenCookie);
-
-    const result = await axios.get(
-      'https://backend-utec-timestamp.herokuapp.com/api/v1/login/validation/token',
-      {
-        headers: {
-          token: MyTokenCookie,
-        },
-      }
-    );
-
-    return result;
+    return res.status(200).json(MyTokenCookie);
   } catch (error) {
-    console.log(error);
+    return res.status(400).json(error);
   }
 }
