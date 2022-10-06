@@ -39,11 +39,11 @@ const Header = () => {
       </BurgerMenuContainer>
 
       <HeaderNavContainer hidden={menu}>
-        <Link href='/dashboard' passHref>
+        <Link href='/private/dashboard' passHref>
           <LinkRouter>Home</LinkRouter>
         </Link>
 
-        <Link href='/permissions' passHref>
+        <Link href='/private/permissions' passHref>
           <LinkRouter>Permissions</LinkRouter>
         </Link>
 
