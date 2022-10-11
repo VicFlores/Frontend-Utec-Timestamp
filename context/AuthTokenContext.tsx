@@ -7,6 +7,7 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }: TLayout) => {
   const [authCookie, setAuthCookie] = useState('waiting');
+  const [cookieDecoded, setCookieDecoded] = useState('waiting');
 
   useEffect(() => {
     const getCookieToken = async () => {
@@ -14,12 +15,19 @@ export const AuthProvider = ({ children }: TLayout) => {
       setAuthCookie(authToken);
     };
 
+    const getCookieDecoded = async () => {
+      const cookieDecoded: any = await axios.get('/api/profile');
+      setCookieDecoded(cookieDecoded);
+    };
+
     getCookieToken();
+    getCookieDecoded();
   }, []);
 
   const values = useMemo(
     () => ({
       authCookie,
+      cookieDecoded,
     }),
     [authCookie]
   );
