@@ -9,10 +9,11 @@ export const AllowancesContainer = styled.section`
 
 // Search teacher
 
-export const LoginContainer = styled.section`
+export const SearchContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 70px;
   height: auto;
 `;
 
