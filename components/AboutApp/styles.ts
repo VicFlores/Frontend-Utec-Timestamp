@@ -75,7 +75,7 @@ export const AboutAppButton = styled.button`
   border: none;
   padding: 15px 15px;
   border-radius: 6px;
-  width: 116px;
+  width: 137px;
 
   @media (min-width: 992px) {
     margin-right: 25px;

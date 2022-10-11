@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Footer from '../Footer/Footer';
+import { LinkRouter } from '../Header/styles';
 import {
   AboutAppButton,
   AboutAppButtonContainer,
@@ -43,9 +45,12 @@ const AboutApp = () => {
         </AboutAppSubTitle>
 
         <AboutAppButtonContainer>
-          <AboutAppButton>Get Started</AboutAppButton>
           <AboutAppButton>About Me</AboutAppButton>
-          <AboutAppButton>Login</AboutAppButton>
+          <AboutAppButton>
+            <Link href='/private/login' passHref>
+              <LinkRouter>Get Started</LinkRouter>
+            </Link>
+          </AboutAppButton>
         </AboutAppButtonContainer>
       </AboutAppContainer>
 
