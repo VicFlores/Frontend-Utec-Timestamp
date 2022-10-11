@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { serialize } from 'cookie';
+import { customAxios } from '../../../axiosConfig';
 
 type TLogin = {
   email: string;
@@ -10,13 +10,10 @@ export default async function loginHandler(req: any, res: any) {
   try {
     const { email, passwd } = req.body as unknown as TLogin;
 
-    const result = await axios.post(
-      'https://backend-utec-timestamp.herokuapp.com/api/v1/login',
-      {
-        email,
-        passwd,
-      }
-    );
+    const result = await customAxios.post('/login', {
+      email,
+      passwd,
+    });
 
     const serialized = serialize('MyTokenCookie', result.data.token, {
       httpOnly: true,
