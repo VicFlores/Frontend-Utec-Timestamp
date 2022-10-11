@@ -6,7 +6,7 @@ export default async function profileHandler(req: any, res: any) {
 
     const decodedToken: any = jwt.decode(MyTokenCookie);
 
-    return res.status(200).json({ mail: decodedToken?.mail });
+    return res.status(200).json({ role: decodedToken?.rol });
   } catch (error) {
     return res.status(400).json(error);
   }
