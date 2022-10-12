@@ -47,7 +47,7 @@ const AboutApp = () => {
         <AboutAppButtonContainer>
           <AboutAppButton>About Me</AboutAppButton>
           <AboutAppButton>
-            <Link href='/private/login' passHref>
+            <Link href='/login' passHref>
               <LinkRouter>Get Started</LinkRouter>
             </Link>
           </AboutAppButton>
