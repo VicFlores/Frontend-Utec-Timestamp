@@ -1,5 +1,5 @@
 import React from 'react';
-import Allowances from '../../components/Allowances/Allowances';
+import Teachers from '../../components/Teachers/Teachers';
 import { getCookie } from 'cookies-next';
 
 import { InferGetServerSidePropsType } from 'next';
@@ -10,10 +10,10 @@ export const getServerSideProps = ({ req, res }: any) => {
   return { props: { token } };
 };
 
-const permissions = ({
+const users = ({
   token,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <Allowances authToken={token}/>;
+  return <Teachers authToken={token} />;
 };
 
-export default permissions;
+export default users;
