@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
-import { AuthProvider } from '../context/AuthTokenContext';
 import '../styles/normalize.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -12,10 +11,10 @@ const GlobalStyle = createGlobalStyle`
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AuthProvider>
+    <>
       <GlobalStyle />
       <Component {...pageProps} />
-    </AuthProvider>
+    </>
   );
 }
 
