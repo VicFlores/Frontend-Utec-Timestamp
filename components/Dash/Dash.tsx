@@ -1,38 +1,34 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { customAxios } from '../../axiosConfig';
-import { AuthContext } from '../../context/AuthTokenContext';
 import { TArrayResponse } from '../../types/TArrayResponse';
 import Layout from '../Layout/Layout';
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from './styles';
 
-const Dash = () => {
+const Dash = ({ authToken, decoded }: any) => {
   const [allTimestamps, setAllTimestamps] = useState<TArrayResponse>();
-  const { authCookie, cookieDecoded }: any = useContext(AuthContext);
 
   useEffect(() => {
     try {
-      if (authCookie?.data) {
-        const getTimestamps = async () => {
-          const getTimestamps: any = await customAxios.get('/timestamp', {
-            headers: {
-              token: authCookie.data,
-              role: cookieDecoded.data?.role,
-            },
+      const getTimestamps = async () => {
+        const getTimestamps: any = await customAxios.get('/timestamp', {
+          headers: {
+            token: authToken,
+            role: decoded.rol,
+          },
 
-            params: {
-              limit: 10,
-              skip: 0,
-            },
-          });
+          params: {
+            limit: 10,
+            skip: 0,
+          },
+        });
 
-          setAllTimestamps(getTimestamps);
-        };
-        getTimestamps();
-      }
+        setAllTimestamps(getTimestamps);
+      };
+      getTimestamps();
     } catch (error) {
       console.log(error);
     }
-  }, [authCookie]);
+  }, []);
 
   return (
     <Layout>
@@ -62,6 +58,7 @@ const Dash = () => {
               })
             ) : (
               <Tr key={Math.floor(Math.random() * 5) + 1}>
+                <Td>Waiting teacher's code</Td>
                 <Td>Waiting name</Td>
                 <Td>Waiting lastname</Td>
                 <Td>Waiting dialing</Td>
