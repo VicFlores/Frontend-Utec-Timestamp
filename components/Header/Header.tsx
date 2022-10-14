@@ -47,7 +47,7 @@ const Header = () => {
           <LinkRouter>Permissions</LinkRouter>
         </Link>
 
-        <Link href='/' passHref>
+        <Link href='/private/users' passHref>
           <LinkRouter>Teachers</LinkRouter>
         </Link>
       </HeaderNavContainer>
