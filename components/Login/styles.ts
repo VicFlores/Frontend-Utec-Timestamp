@@ -35,7 +35,7 @@ export const LoginCardImageContainer = styled.figure`
 `;
 
 export const LoginCardImage = styled.img`
-  width: 303px;
+  width: 100%;
   height: 162px;
 `;
 
