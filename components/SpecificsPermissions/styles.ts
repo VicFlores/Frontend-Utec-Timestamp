@@ -1,53 +1,53 @@
 import styled from 'styled-components';
 
-export const LoginContainer = styled.section`
+export const UserNoteContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 48px;
 `;
 
-export const LoginFormContainer = styled.div`
-  text-align: center;
-`;
-export const LoginCardFormContainer = styled.div`
+export const UserNoteCardFormContainer = styled.div`
   text-align: center;
   display: grid;
   gap: 20px;
 
   @media (min-width: 992px) {
     display: grid;
-    grid-template-columns: 303px 1fr;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: 0;
   }
 `;
 
-export const LoginCardImageContainer = styled.figure`
+export const UserNoteCardImageContainer = styled.figure`
   text-align: center;
   margin: 0;
   display: none;
 
   @media (min-width: 992px) {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
-export const LoginCardImage = styled.img`
-  width: 303px;
-  height: 162px;
+export const Label = styled.label`
+  font-size: 15px;
+  padding: 15px 0 8px 0;
+  margin: 0;
+  text-align: left;
 `;
 
-export const LoginCardFormTitle = styled.p`
-  font-size: 20px;
-  margin: 28px 0;
+export const Item = styled.div`
+  display: grid;
 `;
 
-export const LoginCardForm = styled.form`
+export const UserNoteCardForm = styled.form`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 50px);
+  grid-template-rows: repeat(6, 90px);
   height: auto;
   width: 357px;
   background-color: #f5f6f8;
@@ -56,31 +56,9 @@ export const LoginCardForm = styled.form`
   border-radius: 12px;
 `;
 
-export const LoginCardFormInput = styled.input`
-  border-bottom: 1px solid #b8b5ff;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  padding: 8px 4px;
-  outline-style: none;
-  background: transparent;
-  color: #484848;
-
-  ::placeholder {
-    color: #484848;
-    opacity: 0.5;
-  }
-`;
-
-export const Button = styled.button`
-  background-color: #143f6b;
-  border-radius: 5px;
-  color: #fff;
-  height: 42px;
-  width: 185px;
-  border-style: none;
-  justify-self: center;
-  cursor: pointer;
-  font-size: 18px;
-  margin-top: 15px;
+export const SpecificPermissionCardFormTextArea = styled.textarea`
+  margin-top: 4px;
+  padding: 8px 5px;
+  font-size: 15px;
+  background-color: #f9f9f9;
 `;
