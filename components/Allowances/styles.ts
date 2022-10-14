@@ -4,7 +4,6 @@ export const AllowancesContainer = styled.section`
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
-  height: 100vh;
 `;
 
 // Search teacher
@@ -107,7 +106,7 @@ export const TableContainer = styled.section`
     align-items: flex-start;
     width: 100%;
     overflow: hidden;
-    height: 67vh;
+    height: auto;
   }
 `;
 
