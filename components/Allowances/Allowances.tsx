@@ -20,7 +20,7 @@ import {
   Thead,
   Tr,
 } from './styles';
-import { AuthContext } from '../../context/AuthTokenContext';
+
 import { customAxios } from '../../axiosConfig';
 import { TArrayResponse } from '../../types/TArrayResponse';
 import Link from 'next/link';
@@ -34,8 +34,7 @@ type TErrorMessage = {
   message: string;
 };
 
-const Allowances = () => {
-  const { authCookie, cookieDecoded }: any = useContext(AuthContext);
+const Allowances = ({ authToken, decoded }: any) => {
   const [userByCode, setUserByCode] = useState<TArrayResponse>();
   const [errorMessage, setErrorMessage] = useState<TErrorMessage>({
     status: 0,
@@ -54,8 +53,8 @@ const Allowances = () => {
         '/timestamp/specific/user/code/registers',
         {
           headers: {
-            token: authCookie.data,
-            role: cookieDecoded.data?.role,
+            token: authToken,
+            role: decoded.rol,
           },
 
           params: {
