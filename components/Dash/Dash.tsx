@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { customAxios } from '../../axiosConfig';
 import { TArrayResponse } from '../../types/TArrayResponse';
 import Layout from '../Layout/Layout';
