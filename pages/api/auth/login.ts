@@ -25,7 +25,9 @@ export default async function loginHandler(req: any, res: any) {
 
     res.setHeader('Set-Cookie', serialized);
 
-    return res.status(200).json('Login Successfully');
+    return res
+      .status(200)
+      .json({ data: 'Login Successfully', token: result.data.token });
   } catch (error: any) {
     if (error.response) {
       return res.status(401).json(error.response.data);
