@@ -1,9 +1,9 @@
-import React from 'react';
 import { getCookie } from 'cookies-next';
-import { InferGetServerSidePropsType } from 'next';
+import React from 'react';
 import jwt from 'jsonwebtoken';
-import SpecificsPermissions from '../../../components/SpecificsPermissions/SpecificsPermissions';
-import { IPayload } from '../../../types/TPayload';
+import NewTeacher from '../../components/NewTeacher/NewTeacher';
+import { InferGetServerSidePropsType } from 'next';
+import { IPayload } from '../../types/TPayload';
 
 export const getServerSideProps = ({ req, res }: any) => {
   const token: any = getCookie('MyTokenCookie', { req, res });
@@ -23,11 +23,11 @@ export const getServerSideProps = ({ req, res }: any) => {
   return { props: { token, decodedToken } };
 };
 
-const userNotes = ({
+const newUser = ({
   token,
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <SpecificsPermissions authToken={token} decoded={decodedToken} />;
+  return <NewTeacher authToken={token} decoded={decodedToken}/>;
 };
 
-export default userNotes;
+export default newUser;
