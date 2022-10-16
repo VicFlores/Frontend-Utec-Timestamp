@@ -4,6 +4,7 @@ import { getCookie } from 'cookies-next';
 import jwt from 'jsonwebtoken';
 import { InferGetServerSidePropsType } from 'next';
 import { IPayload } from '../../types/TPayload';
+import Layout from '../../components/Layout/Layout';
 
 export const getServerSideProps = ({ req, res }: any) => {
   const token: any = getCookie('MyTokenCookie', { req, res });
@@ -26,7 +27,11 @@ const dashboard = ({
   token,
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <Dash authToken={token} decoded={decodedToken} />;
+  return (
+    <Layout>
+      <Dash authToken={token} decoded={decodedToken} />
+    </Layout>
+  );
 };
 
 export default dashboard;

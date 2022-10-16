@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import NewTeacher from '../../components/NewTeacher/NewTeacher';
 import { InferGetServerSidePropsType } from 'next';
 import { IPayload } from '../../types/TPayload';
+import Layout from '../../components/Layout/Layout';
 
 export const getServerSideProps = ({ req, res }: any) => {
   const token: any = getCookie('MyTokenCookie', { req, res });
@@ -27,7 +28,11 @@ const newUser = ({
   token,
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <NewTeacher authToken={token} decoded={decodedToken}/>;
+  return (
+    <Layout>
+      <NewTeacher authToken={token} decoded={decodedToken} />;
+    </Layout>
+  );
 };
 
 export default newUser;

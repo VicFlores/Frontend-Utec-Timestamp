@@ -5,6 +5,7 @@ import { getCookie } from 'cookies-next';
 
 import { InferGetServerSidePropsType } from 'next';
 import { IPayload } from '../../types/TPayload';
+import Layout from '../../components/Layout/Layout';
 
 export const getServerSideProps = ({ req, res }: any) => {
   const token: any = getCookie('MyTokenCookie', { req, res });
@@ -28,7 +29,11 @@ const permissions = ({
   token,
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <Allowances authToken={token} decoded={decodedToken} />;
+  return (
+    <Layout>
+      <Allowances authToken={token} decoded={decodedToken} />
+    </Layout>
+  );
 };
 
 export default permissions;

@@ -4,6 +4,7 @@ import { InferGetServerSidePropsType } from 'next';
 import jwt from 'jsonwebtoken';
 import SpecificsPermissions from '../../../components/SpecificsPermissions/SpecificsPermissions';
 import { IPayload } from '../../../types/TPayload';
+import Layout from '../../../components/Layout/Layout';
 
 export const getServerSideProps = ({ req, res }: any) => {
   const token: any = getCookie('MyTokenCookie', { req, res });
@@ -27,7 +28,11 @@ const userNotes = ({
   token,
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <SpecificsPermissions authToken={token} decoded={decodedToken} />;
+  return (
+    <Layout>
+      <SpecificsPermissions authToken={token} decoded={decodedToken} />
+    </Layout>
+  );
 };
 
 export default userNotes;
