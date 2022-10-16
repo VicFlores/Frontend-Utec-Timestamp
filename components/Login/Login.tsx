@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
 import {
   Button,
@@ -38,16 +39,24 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      await axios.post('/api/auth/login', data);
+      const response = await axios.post('/api/auth/login', data);
 
       setErrorMessage({
         status: 200,
         message: 'Login Success',
       });
 
-      router.push({
-        pathname: '/private/dashboard',
-      });
+      const decodedToken: any = jwt.decode(response.data.token);
+
+      if (decodedToken.rol === 'admin') {
+        router.push({
+          pathname: '/private/dashboard',
+        });
+      } else if (decodedToken.rol === 'teacher') {
+        router.push({
+          pathname: '/teachers/dashboard',
+        });
+      }
     } catch (error: any) {
       setErrorMessage(error.response.data);
       return new Error(error.response.data);
