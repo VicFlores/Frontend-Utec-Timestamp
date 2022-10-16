@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Layout from '../Layout/Layout';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import {
   AllowancesContainer,
@@ -73,79 +72,75 @@ const Allowances = ({ authToken, decoded }: any) => {
   };
 
   return (
-    <Layout>
-      <AllowancesContainer>
-        <SearchContainer>
-          <LoginCardFormContainer>
-            <LoginCardImageContainer>
-              <LoginCardImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661554465/frontend-utec-timestamp/undraw_people_search_re_5rre_pvrv6r.svg' />
-            </LoginCardImageContainer>
-            <LoginCardForm onSubmit={handleSubmit(onSubmit)}>
-              <LoginCardFormTitle>
-                Search teacher permissions
-              </LoginCardFormTitle>
-              <LoginCardFormInput
-                {...register('cod_user', { required: true })}
-                placeholder='code teacher'
-                type='number'
-              />
-              <Button>Search</Button>
-            </LoginCardForm>
-          </LoginCardFormContainer>
-        </SearchContainer>
+    <AllowancesContainer>
+      <SearchContainer>
+        <LoginCardFormContainer>
+          <LoginCardImageContainer>
+            <LoginCardImage src='https://res.cloudinary.com/vicflores11/image/upload/v1661554465/frontend-utec-timestamp/undraw_people_search_re_5rre_pvrv6r.svg' />
+          </LoginCardImageContainer>
+          <LoginCardForm onSubmit={handleSubmit(onSubmit)}>
+            <LoginCardFormTitle>Search teacher permissions</LoginCardFormTitle>
+            <LoginCardFormInput
+              {...register('cod_user', { required: true })}
+              placeholder='code teacher'
+              type='number'
+            />
+            <Button>Search</Button>
+          </LoginCardForm>
+        </LoginCardFormContainer>
+      </SearchContainer>
 
-        <TableContainer>
-          <Table className='animate__animated animate__fadeInLeft'>
-            <Thead>
-              <Tr>
-                <Th>Name</Th>
-                <Th>Lastname</Th>
-                <Th>Dialing</Th>
-                <Th>Type of permissions</Th>
-                <Th>Note of permission</Th>
+      <TableContainer>
+        <Table className='animate__animated animate__fadeInLeft'>
+          <Thead>
+            <Tr>
+              <Th>Name</Th>
+              <Th>Lastname</Th>
+              <Th>Dialing</Th>
+              <Th>Type of permissions</Th>
+              <Th>Note of permission</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {userByCode?.data.length === 0 ? (
+              <Tr key={Math.floor(Math.random() * 5) + 1}>
+                <Td>Dialing not yet done</Td>
+                <Td>Dialing not yet done</Td>
+                <Td>Dialing not yet done</Td>
+                <Td>Dialing not yet done</Td>
+                <Td>Dialing not yet done</Td>
               </Tr>
-            </Thead>
-            <Tbody>
-              {userByCode?.data.length === 0 ? (
-                <Tr key={Math.floor(Math.random() * 5) + 1}>
-                  <Td>Dialing not yet done</Td>
-                  <Td>Dialing not yet done</Td>
-                  <Td>Dialing not yet done</Td>
-                  <Td>Dialing not yet done</Td>
-                  <Td>Dialing not yet done</Td>
-                </Tr>
-              ) : userByCode?.data ? (
-                userByCode.data.map((value: any) => {
-                  return (
-                    <Tr key={value._id}>
-                      <Td>{value.result.name}</Td>
-                      <Td>{value.result.lastname}</Td>
-                      <Td>{value.dialing}</Td>
-                      <Td>{value.type}</Td>
-                      <Td>
-                        <Link href={`/private/userNotes/${value._id}`}>
-                          <TableButton theme={{ bgColor: '#3EC70B', wth: 100 }}>
-                            View Note
-                          </TableButton>
-                        </Link>
-                      </Td>
-                    </Tr>
-                  );
-                })
-              ) : (
-                <Tr key={Math.floor(Math.random() * 5) + 1}>
-                  <Td>Waiting name</Td>
-                  <Td>Waiting lastname</Td>
-                  <Td>Waiting dialing</Td>
-                  <Td>Waiting type of permissions</Td>
-                  <Td>Waiting note of permissions button</Td>
-                </Tr>
-              )}
-            </Tbody>
-          </Table>
-        </TableContainer>
-      </AllowancesContainer>
-    </Layout>
+            ) : userByCode?.data ? (
+              userByCode.data.map((value: any) => {
+                return (
+                  <Tr key={value._id}>
+                    <Td>{value.result.name}</Td>
+                    <Td>{value.result.lastname}</Td>
+                    <Td>{value.dialing}</Td>
+                    <Td>{value.type}</Td>
+                    <Td>
+                      <Link href={`/private/userNotes/${value._id}`}>
+                        <TableButton theme={{ bgColor: '#3EC70B', wth: 100 }}>
+                          View Note
+                        </TableButton>
+                      </Link>
+                    </Td>
+                  </Tr>
+                );
+              })
+            ) : (
+              <Tr key={Math.floor(Math.random() * 5) + 1}>
+                <Td>Waiting name</Td>
+                <Td>Waiting lastname</Td>
+                <Td>Waiting dialing</Td>
+                <Td>Waiting type of permissions</Td>
+                <Td>Waiting note of permissions button</Td>
+              </Tr>
+            )}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </AllowancesContainer>
   );
 };
 

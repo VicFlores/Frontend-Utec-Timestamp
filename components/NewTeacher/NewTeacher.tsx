@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { customAxios } from '../../axiosConfig';
-import Layout from '../Layout/Layout';
 import {
   Button,
   LoginCardFormInput,
@@ -63,47 +62,43 @@ const NewTeacher = ({ authToken, decoded }: any) => {
   };
 
   return (
-    <Layout>
-      <UserNoteContainer>
-        <UserNoteCardFormContainer>
-          <LoginCardImageContainer>
-            <LoginCardImage src='https://res.cloudinary.com/vicflores11/image/upload/v1665769025/frontend-utec-timestamp/undraw_online_cv_re_gn0a_lrp354.svg' />
-          </LoginCardImageContainer>
-          <TeacherCardForm onSubmit={handleSubmit(onSubmit)}>
-            <LoginCardFormTitle>
-              Create a new teacher account
-            </LoginCardFormTitle>
+    <UserNoteContainer>
+      <UserNoteCardFormContainer>
+        <LoginCardImageContainer>
+          <LoginCardImage src='https://res.cloudinary.com/vicflores11/image/upload/v1665769025/frontend-utec-timestamp/undraw_online_cv_re_gn0a_lrp354.svg' />
+        </LoginCardImageContainer>
+        <TeacherCardForm onSubmit={handleSubmit(onSubmit)}>
+          <LoginCardFormTitle>Create a new teacher account</LoginCardFormTitle>
 
-            <LoginCardFormInput
-              {...register('cod_user', { required: true })}
-              placeholder='Teacher code'
-              type='number'
-            />
-            <LoginCardFormInput
-              {...register('name', { required: true })}
-              placeholder='First Name'
-              type='text'
-            />
-            <LoginCardFormInput
-              {...register('lastname', { required: true })}
-              placeholder='Last Name'
-              type='text'
-            />
-            <LoginCardFormInput
-              {...register('email', { required: true })}
-              placeholder='Email'
-              type='email'
-            />
-            <LoginCardFormInput
-              {...register('password', { required: true })}
-              placeholder='Password'
-              type='password'
-            />
-            <Button>Create new account</Button>
-          </TeacherCardForm>
-        </UserNoteCardFormContainer>
-      </UserNoteContainer>
-    </Layout>
+          <LoginCardFormInput
+            {...register('cod_user', { required: true })}
+            placeholder='Teacher code'
+            type='number'
+          />
+          <LoginCardFormInput
+            {...register('name', { required: true })}
+            placeholder='First Name'
+            type='text'
+          />
+          <LoginCardFormInput
+            {...register('lastname', { required: true })}
+            placeholder='Last Name'
+            type='text'
+          />
+          <LoginCardFormInput
+            {...register('email', { required: true })}
+            placeholder='Email'
+            type='email'
+          />
+          <LoginCardFormInput
+            {...register('password', { required: true })}
+            placeholder='Password'
+            type='password'
+          />
+          <Button>Create new account</Button>
+        </TeacherCardForm>
+      </UserNoteCardFormContainer>
+    </UserNoteContainer>
   );
 };
 
