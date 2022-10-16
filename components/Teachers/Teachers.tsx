@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 import { customAxios } from '../../axiosConfig';
-
 import { TArrayResponse } from '../../types/TArrayResponse';
 import { Table, Tbody, Td, Th, Thead, Tr } from '../Dash/styles';
 import Layout from '../Layout/Layout';
-import { Button, TableContainer } from './styles';
+import { Button, LinkRouter, TableContainer } from './styles';
 
 const Teachers = ({ authToken, decoded }: any) => {
   const [allUsers, setAllUsers] = useState<TArrayResponse>();
@@ -35,7 +35,11 @@ const Teachers = ({ authToken, decoded }: any) => {
   return (
     <Layout>
       <TableContainer>
-        <Button theme={{ marginL: '20px' }}>New Teacher</Button>
+        <Button theme={{ marginL: '20px' }}>
+          <Link href='/private/newUser' passHref>
+            <LinkRouter>New Teacher</LinkRouter>
+          </Link>
+        </Button>
         <Table className='animate__animated animate__fadeInLeft'>
           <Thead>
             <Tr>

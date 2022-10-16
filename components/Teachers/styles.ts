@@ -11,7 +11,7 @@ export const TableContainer = styled.section`
     align-items: flex-start;
     width: 100%;
     overflow: hidden;
-    height: 67vh;
+    height: auto;
     margin: 100px 0;
   }
 `;
@@ -25,4 +25,9 @@ export const Button = styled.button`
   border-style: none;
   cursor: pointer;
   margin-left: ${(props) => props.theme.marginL};
+`;
+
+export const LinkRouter = styled.a`
+  color: white;
+  text-decoration: none;
 `;
