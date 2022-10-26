@@ -30,7 +30,7 @@ const permissions = ({
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <Layout>
+    <Layout decoded={decodedToken}>
       <Allowances authToken={token} decoded={decodedToken} />
     </Layout>
   );

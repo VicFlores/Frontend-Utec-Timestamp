@@ -30,7 +30,7 @@ const users = ({
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <Layout>
+    <Layout decoded={decodedToken}>
       <Teachers authToken={token} decoded={decodedToken} />
     </Layout>
   );

@@ -28,7 +28,7 @@ const dashboard = ({
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <Layout>
+    <Layout decoded={decodedToken}>
       <Dash authToken={token} decoded={decodedToken} />
     </Layout>
   );

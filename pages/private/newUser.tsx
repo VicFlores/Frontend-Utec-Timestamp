@@ -29,7 +29,7 @@ const newUser = ({
   decodedToken,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <Layout>
+    <Layout decoded={decodedToken}>
       <NewTeacher authToken={token} decoded={decodedToken} />;
     </Layout>
   );
