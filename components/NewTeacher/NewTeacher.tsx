@@ -45,7 +45,10 @@ const NewTeacher = ({ authToken, decoded }: any) => {
     try {
       customAxios.defaults.headers.post['token'] = authToken;
       customAxios.defaults.headers.post['role'] = decoded.rol;
-      await customAxios.post('/users', data);
+      await customAxios.post('/users', {
+        ...data,
+        cod_user: Number(data.cod_user),
+      });
 
       setErrorMessage({
         status: 200,
@@ -95,7 +98,8 @@ const NewTeacher = ({ authToken, decoded }: any) => {
             placeholder='Password'
             type='password'
           />
-          <Button>Create new account</Button>
+
+          <Button type='submit'>Create new account</Button>
         </TeacherCardForm>
       </UserNoteCardFormContainer>
     </UserNoteContainer>
