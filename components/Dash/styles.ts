@@ -11,7 +11,7 @@ export const TableContainer = styled.section`
     align-items: flex-start;
     width: 100%;
     overflow: hidden;
-    height: auto;
+    height: 100vh;
   }
 `;
 
