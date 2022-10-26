@@ -3,10 +3,10 @@ import { TLayout } from '../../types/TLayout';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
-const Layout = ({ children, show }: TLayout) => {
+const Layout = ({ children, decoded }: TLayout) => {
   return (
     <>
-      <Header />
+      <Header decoded={decoded} />
       {children}
       <Footer margin='90' />
     </>
