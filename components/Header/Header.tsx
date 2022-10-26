@@ -13,7 +13,7 @@ import {
   LinkRouter,
 } from './styles';
 
-const Header = () => {
+const Header = ({ decoded }: any) => {
   const router = useRouter();
   const [menu, setMenu] = useState<boolean>(false);
 
@@ -29,33 +29,63 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer hidden={menu}>
-      <HeaderAppName>Utec Timestamp</HeaderAppName>
+    <>
+      {decoded.rol === 'admin' ? (
+        <HeaderContainer hidden={menu}>
+          <HeaderAppName>Utec Timestamp</HeaderAppName>
 
-      <BurgerMenuContainer>
-        <BurgerMenu onClick={handleMenu}>
-          <AiOutlineMenu />
-        </BurgerMenu>
-      </BurgerMenuContainer>
+          <BurgerMenuContainer>
+            <BurgerMenu onClick={handleMenu}>
+              <AiOutlineMenu />
+            </BurgerMenu>
+          </BurgerMenuContainer>
 
-      <HeaderNavContainer hidden={menu}>
-        <Link href='/private/dashboard' passHref>
-          <LinkRouter>Home</LinkRouter>
-        </Link>
+          <HeaderNavContainer hidden={menu}>
+            <Link href='/private/dashboard' passHref>
+              <LinkRouter>Home</LinkRouter>
+            </Link>
 
-        <Link href='/private/permissions' passHref>
-          <LinkRouter>Permissions</LinkRouter>
-        </Link>
+            <Link href='/private/permissions' passHref>
+              <LinkRouter>Permissions</LinkRouter>
+            </Link>
 
-        <Link href='/private/users' passHref>
-          <LinkRouter>Teachers</LinkRouter>
-        </Link>
-      </HeaderNavContainer>
+            <Link href='/private/users' passHref>
+              <LinkRouter>Teachers</LinkRouter>
+            </Link>
+          </HeaderNavContainer>
 
-      <HeaderButton onClick={() => logout()} hidden={menu}>
-        Logout
-      </HeaderButton>
-    </HeaderContainer>
+          <HeaderButton onClick={() => logout()} hidden={menu}>
+            Logout
+          </HeaderButton>
+        </HeaderContainer>
+      ) : decoded.rol === 'teacher' ? (
+        <HeaderContainer hidden={menu}>
+          <HeaderAppName>Utec Timestamp</HeaderAppName>
+
+          <BurgerMenuContainer>
+            <BurgerMenu onClick={handleMenu}>
+              <AiOutlineMenu />
+            </BurgerMenu>
+          </BurgerMenuContainer>
+
+          <HeaderNavContainer hidden={menu}>
+            <Link href='/teachers/dashboard' passHref>
+              <LinkRouter>Home</LinkRouter>
+            </Link>
+
+            <Link href='/teachers/emergency' passHref>
+              <LinkRouter>Emergency</LinkRouter>
+            </Link>
+          </HeaderNavContainer>
+
+          <HeaderButton onClick={() => logout()} hidden={menu}>
+            Logout
+          </HeaderButton>
+        </HeaderContainer>
+      ) : (
+        ''
+      )}
+    </>
   );
 };
 
