@@ -60,7 +60,9 @@ const Teachers = ({ authToken, decoded }: any) => {
                   {value.photo_example_1 ||
                   value.photo_example_2 === 'Pending' ? (
                     <Td>
-                      <Button theme={{ marginL: 0 }}>Upload Photos</Button>
+                      <Link href={`/private/uploadPhoto/${value._id}`}>
+                        <Button theme={{ marginL: 0 }}>Upload Photos</Button>
+                      </Link>
                     </Td>
                   ) : (
                     <Td>Photos completed</Td>
