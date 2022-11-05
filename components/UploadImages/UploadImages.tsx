@@ -66,7 +66,7 @@ const UploadImages = ({ authToken, decoded }: any) => {
     customAxios.defaults.headers.put['token'] = authToken;
     customAxios.defaults.headers.put['role'] = decoded.rol;
     const response = await customAxios.put(`/users/upload/${query.id}`, {
-      photo_example_1: resCloudinary.data.url,
+      photo_example_1: resCloudinary.data.secure_url,
     });
 
     setOnePhotoMessage(response.data);
@@ -87,7 +87,7 @@ const UploadImages = ({ authToken, decoded }: any) => {
     customAxios.defaults.headers.put['token'] = authToken;
     customAxios.defaults.headers.put['role'] = decoded.rol;
     const response = await customAxios.put(`/users/upload/${query.id}`, {
-      photo_example_2: resCloudinary.data.url,
+      photo_example_2: resCloudinary.data.secure_url,
     });
 
     setTwoPhotoMessage(response.data);
