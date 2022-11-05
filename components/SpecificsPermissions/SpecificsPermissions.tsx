@@ -55,7 +55,7 @@ const SpecificsPermissions = ({ authToken, decoded }: any) => {
             return (
               <LoginCardForm key={value._id}>
                 <LoginCardFormTitle>
-                  Teacher's note information
+                  Teachers note information
                 </LoginCardFormTitle>
 
                 <Item>
@@ -116,7 +116,7 @@ const SpecificsPermissions = ({ authToken, decoded }: any) => {
           })
         ) : (
           <LoginCardForm key={Math.floor(Math.random() * 5) + 1}>
-            <LoginCardFormTitle>Teacher's note information</LoginCardFormTitle>
+            <LoginCardFormTitle>Teachers note information</LoginCardFormTitle>
             <LoginCardFormInput
               placeholder='Teacher code'
               type='text'

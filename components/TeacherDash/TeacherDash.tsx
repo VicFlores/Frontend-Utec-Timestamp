@@ -68,7 +68,7 @@ const TeacherDash = ({ authToken, decoded }: any) => {
             })
           ) : (
             <Tr key={Math.floor(Math.random() * 5) + 1}>
-              <Td>Waiting teacher's code</Td>
+              <Td>Waiting teachers code</Td>
               <Td>Waiting name</Td>
               <Td>Waiting lastname</Td>
               <Td>Waiting dialing</Td>

@@ -56,7 +56,7 @@ const AboutApp = () => {
 
       <AboutAppMainContainer>
         <AboutAppTitle theme={{ color: 'black' }}>
-          What's new about utec timestamp?
+          Whats new about utec timestamp?
         </AboutAppTitle>
 
         <AboutAppMainSubTitleImage>
