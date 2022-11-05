@@ -41,6 +41,8 @@ const TeacherDash = ({ authToken, decoded }: any) => {
     }
   }, []);
 
+  console.log(allUserTimestamp);
+
   return (
     <TableContainer>
       <Table className='animate__animated animate__fadeInLeft'>
@@ -54,7 +56,15 @@ const TeacherDash = ({ authToken, decoded }: any) => {
           </Tr>
         </Thead>
         <Tbody>
-          {allUserTimestamp?.data ? (
+          {allUserTimestamp?.data.length === 0 ? (
+            <Tr key={Math.floor(Math.random() * 5) + 1}>
+              <Td>Teacher code not yet done</Td>
+              <Td>Name not yet done</Td>
+              <Td>Lastname not yet done</Td>
+              <Td>Dialing not yet done</Td>
+              <Td>Type of permissions not yet done</Td>
+            </Tr>
+          ) : allUserTimestamp?.data ? (
             allUserTimestamp.data.map((value: any) => {
               return (
                 <Tr key={value._id}>
