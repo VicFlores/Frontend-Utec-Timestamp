@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useRouter } from 'next/router';
 import { customAxios } from '../../axiosConfig';
 import {
   Button,
@@ -22,6 +23,7 @@ type TErrorMessage = {
 };
 
 const TeacherEmergency = ({ authToken, decoded }: any) => {
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = useState<TErrorMessage>({
     status: 0,
     message: '',
@@ -40,6 +42,10 @@ const TeacherEmergency = ({ authToken, decoded }: any) => {
       await customAxios.post('/timestamp/emergency', {
         _idUser: decoded.sub,
         note,
+      });
+
+      router.push({
+        pathname: '/teachers/dashboard',
       });
     } catch (error: any) {
       setErrorMessage(error.response.data);
