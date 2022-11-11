@@ -9,25 +9,39 @@ export const UploadPhotoMainContainer = styled.section`
 
 export const UploadPhotoMain = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 150px;
+  grid-template-columns: 1fr;
+  row-gap: 56px;
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 150px;
+  }
 `;
 
 export const UploadPhotoCardContainer = styled.div`
   display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 230px 150px;
-  grid-auto-rows: 38px;
+  grid-template-rows: 230px;
   box-shadow: -17px 17px 15px 0px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 992px) {
+    grid-template-columns: 300px;
+    grid-template-rows: 230px 150px;
+    grid-auto-rows: 38px;
+  }
 `;
 
 export const UploadPhotoCardFigure = styled.figure`
-  margin: 0;
-  width: 100%;
-  height: 182px;
-  align-self: center;
-  justify-self: center;
-  text-align: center;
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 182px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
 `;
 
 export const UploadPhotoCardPhoto = styled.img`
@@ -39,8 +53,13 @@ export const UploadPhotoCardInfo = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 70px);
-  justify-content: center;
-  align-items: center;
+  align-self: center;
+  justify-self: center;
+
+  @media (min-width: 992px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const UploadPhotoCardLabel = styled.label`
