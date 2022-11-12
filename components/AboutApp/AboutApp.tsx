@@ -75,7 +75,7 @@ const AboutApp = () => {
           </AboutAppSubTitle>
 
           <AboutAppMainImageContainer>
-            <AboutAppMainImage src='https://res.cloudinary.com/vicflores11/image/upload/v1660777819/frontend-utec-timestamp/home-font_tprxko.png' />
+            <AboutAppMainImage src='://res.cloudinary.com/vicflores11/image/upload/v1660777819/frontend-utec-timestamp/home-font_tprxko.png' />
           </AboutAppMainImageContainer>
         </AboutAppMainSubTitleImage>
       </AboutAppMainContainer>
