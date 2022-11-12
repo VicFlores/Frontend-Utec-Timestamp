@@ -16,7 +16,7 @@ export async function middleware(request: NextRequest) {
     });
 
     await axiosInstance.get(
-      'https://backend-utec-timestamp.herokuapp.com/api/v1/login/validation/token',
+      'https://utec-timestamp-rebuild.onrender.com/api/v1/login/validation/token',
       {
         headers: {
           Authorization: token,

@@ -6,7 +6,7 @@ const nextConfig = {
     styledComponents: true,
   },
   env: {
-    BASE_URL: 'https://backend-utec-timestamp.herokuapp.com',
+    BASE_URL: 'https://utec-timestamp-rebuild.onrender.com',
   },
   
 }
